@@ -1,1 +1,1 @@
-# GarnetKane99.github.io
+# Jake Meyer | Game Designer, Developer
