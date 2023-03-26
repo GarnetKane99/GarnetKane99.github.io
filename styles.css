@@ -5,6 +5,8 @@
 
 body {
     background-color: #1e1e1e;
+    width: auto;
+    height: auto;
 }
 
 div.mainbody{
@@ -24,19 +26,18 @@ h3{
     text-align: center;
 }
 
-div.banner {
+.banner {
+    padding-top:20px;
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: space-evenly;
     color: #FFFFFF;
     font-family: geoReg;
     font-size: 48px;
     width: auto;
-    height: 100px;
+    height: 80px;
     background-color: #373737;
     text-align: center;
-}
-
-a{
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
 a:link {
