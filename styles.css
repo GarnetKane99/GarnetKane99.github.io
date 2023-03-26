@@ -3,4 +3,7 @@ div.banner {
     height: 500px;
     color: #FFFFFF;
     background-color: #373737;
+    font-family: "Geo";
+    src: url(/geo/Geo-Regular.ttf);
+    font-size: 24px;
 }
