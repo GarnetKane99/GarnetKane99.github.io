@@ -1,9 +1,48 @@
-div.banner {
-    width: auto;
-    height: 500px;
+@font-face {
+    font-family: geoReg;
+    src: url(geo/Geo-Regular.ttf);
+}
+
+body {
+    background-color: #1e1e1e;
+}
+
+div.mainbody{
     color: #FFFFFF;
+    font-family: geoReg;
+}
+
+h1{
+    font-size: 98px;
+}
+h3{
+    font-size: 36px;
+}
+
+div.banner {
+    color: #FFFFFF;
+    font-family: geoReg;
+    font-size: 36px;
+    width: auto;
+    height: 100px;
     background-color: #373737;
-    font-family: "Geo";
-    src: url(/geo/Geo-Regular.ttf);
-    font-size: 24px;
+}
+
+a{
+    margin-left: 400px;
+}
+
+a:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ABABAB;
+    text-decoration: none;
 }
