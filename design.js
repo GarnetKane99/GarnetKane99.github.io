@@ -12,10 +12,10 @@ const game_association = ["personal project", "youtube", "personal project", "pe
     "university of technology, sydney", "university of technology, sydney", "university of technology, sydney",
     "university of technology, sydney", "university of technology, sydney"];
 const game_description = [
-    "thaum 2 WIP",
+    "thaum 2 WIP", 
     "plants pillar protector WIP",
-    "GOL WIP",
-    "A simple mobile/browser game similar to Bejewelled/Candy Crush/Jelly Splash. Featuring two game modes, bug-join is a hyper casual match-3 game",
+    "GOL WIP", 
+    "A simple mobile/browser game similar to Bejewelled/Candy Crush/Jelly Splash. Featuring two game modes, bug-join is a hyper casual match-3 game", 
     "A recreation of PONG, featuring 1 player mode, 2 player mode and 3 levels of difficulty with a fully custom made AI",
     "Thaum is a classic roguelike made in Unity2D. Play as JOP the Wizard, stripped of your magic stones, slowly reclaim your power and escape the stronghold!",
     "Colosseum is a multiplayer, arena fighter made in Unity3D. Fight with up to 4 players featuring 3 game modes and 3 game types and be crowned the ultimate gladiator!",
@@ -55,7 +55,7 @@ function updateTitlesRight() {
     flipCard();
 }
 
-function UpdateCurrentTitle() {
+function UpdateCurrentTitle(){
     document.getElementById("gametitle").innerHTML = game_name[activeGame];
     document.getElementById("association").innerHTML = game_association[activeGame];
     document.getElementById("description").innerHTML = game_description[activeGame];
@@ -115,15 +115,15 @@ function flipimg() {
     }
 }
 
-function brightBorder() {
+function brightBorder(){
     document.getElementById("cardflip").style.borderColor = "#FFFFFF";
 }
 
-function dimBorder() {
+function dimBorder(){
     document.getElementById("cardflip").style.borderColor = "#545454";
 }
 
-function UpdateSelection(num) {
+function UpdateSelection(num){
     flipCard();
     UpdateOldSelection();
     activeGame = num;
@@ -131,13 +131,14 @@ function UpdateSelection(num) {
     UpdateNewSelection();
 }
 
-function HoverSelection(num) {
-    //if(num != activeGame){
-    var curSelection = "s" + (num + 1).toString();
-    document.getElementById(curSelection).style.color = "#CBCBCB"
-    //}
+function HoverSelection(num){
+    if(num != activeGame){
+        document.getElementById("s"+(num+1).toString()).style.backgroundColor = "#CBCBCB"
+    }
 }
 
-function UnhoverSelection(num) {
-    document.getElementById("s" + (num + 1).toString()).style.color = "#7e7e7e"
+function UnhoverSelection(num){
+    if(num != activeGame){
+        document.getElementById("s"+(num+1).toString()).style.backgroundColor = "#7e7e7e"
+    }
 }
