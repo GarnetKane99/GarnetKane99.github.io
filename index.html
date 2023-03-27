@@ -3,14 +3,17 @@
 
 <head>
     <link rel="stylesheet" href="styles.css">
+    <script src="design.js"></script>
     <meta charset="utf-8">
     <title>Jake Meyer Portfolio</title>
 </head>
 
-<body>
+<body onload="InitializeTitles()">
     <!--Banner at the top of the web page-->
     <section class="banner">
-        <a href="https://www.linkedin.com/in/jake-gk-meyer/" target="_blank">linkedin</a>
+        <div class="banner-linkedin">
+            <a href="https://www.linkedin.com/in/jake-gk-meyer/" target="_blank">linkedin</a>
+        </div>
         <a href="https://www.youtube.com/@garnetkane" target="_blank">youtube</a>
         <a href="https://www.twitter.com/garnetkane99" target="_blank">twitter</a>
         <a href="https://garnetkane.itch.io/" target="_blank">itch.io</a>
@@ -18,9 +21,72 @@
     </section>
 
     <div class="mainbody">
-        <h1>jake meyer</h1>
-        <h3>game developer, designer, programmer</h3>
+        <h1 class="jaketitle">jake meyer</h1>
+        <h3 class="gamer">game developer, designer, programmer</h3>
     </div>
+
+
+    <div class="arrow-container">
+        <i class="arrow left" onmouseover="leftArrowBig()" onclick="updateTitlesLeft()" onmouseout="leftArrowSmall()"
+            id="arrowleft"></i>
+        <img src="ThaumTwoPromo.png" alt="Thaum Logo" class="game-logo">
+        <i class="arrow right" onmouseover="rightArrowBig()" onclick="updateTitlesRight()"
+            onmouseout="rightArrowSmall()" id="arrowright"></i>
+    </div>
+
+    <div class="selection-container">
+        <i class="selection one" id="s1" onclick="UpdateSelection(0)" onmouseover="HoverSelection(0)"
+            onmouseout="UnhoverSelection(0)"></i>
+        <i class="selection two" id="s2" onclick="UpdateSelection(1)" onmouseover="HoverSelection(1)"
+            onmouseout="UnhoverSelection(1)"></i>
+        <i class="selection three" id="s3" onclick="UpdateSelection(2)" onmouseover="HoverSelection(2)"
+            onmouseout="UnhoverSelection(2)"></i>
+        <i class="selection four" id="s4" onclick="UpdateSelection(3)" onmouseover="HoverSelection(3)"
+            onmouseout="UnhoverSelection(3)"></i>
+        <i class="selection five" id="s5" onclick="UpdateSelection(4)" onmouseover="HoverSelection(4)"
+            onmouseout="UnhoverSelection(4)"></i>
+        <i class="selection six" id="s6" onclick="UpdateSelection(5)" onmouseover="HoverSelection(5)"
+            onmouseout="UnhoverSelection(5)"></i>
+        <i class="selection seven" id="s7" onclick="UpdateSelection(6)" onmouseover="HoverSelection(6)"
+            onmouseout="UnhoverSelection(6)"></i>
+        <i class="selection eight" id="s8" onclick="UpdateSelection(7)" onmouseover="HoverSelection(7)"
+            onmouseout="UnhoverSelection(7)"></i>
+        <i class="selection nine" id="s9" onclick="UpdateSelection(8)" onmouseover="HoverSelection(8)"
+            onmouseout="UnhoverSelection(8)"></i>
+        <i class="selection ten" id="s10" onclick="UpdateSelection(9)" onmouseover="HoverSelection(9)"
+            onmouseout="UnhoverSelection(9)"></i>
+        <i class="selection eleven" id="s11" onclick="UpdateSelection(10)" onmouseover="HoverSelection(10)"
+            onmouseout="UnhoverSelection(10)"></i>
+        <i class="selection twelve" id="s12" onclick="UpdateSelection(11)" onmouseover="HoverSelection(11)"
+            onmouseout="UnhoverSelection(11)"></i>
+        <i class="selection thirteen" id="s13" onclick="UpdateSelection(12)" onmouseover="HoverSelection(12)"
+            onmouseout="UnhoverSelection(12)"></i>
+        <i class="selection fourteen" id="s14" onclick="UpdateSelection(13)" onmouseover="HoverSelection(13)"
+            onmouseout="UnhoverSelection(13)"></i>
+        <i class="selection fifteen" id="s15" onclick="UpdateSelection(14)" onmouseover="HoverSelection(14)"
+            onmouseout="UnhoverSelection(14)"></i>
+    </div>
+
+    <div class="card-container">
+
+        <div class="infocard" id="cardflip" onclick="flipimg()" onmouseover="brightBorder()" onmouseout="dimBorder()">
+            <div class="front" id="front">
+                <h3 class="infocard-game-titles" id="gametitle">thaum - 2021</h3>
+                <h5 class="infocard-association" id="association">University of Technology Sydney</h5>
+                <p class="infocard-game-information" id="description">information about the game</p>
+            </div>
+            <div class="back" id="back">
+                <h3 class="infocard-game-titles">Game Title - YEAR</h3>
+                <h5 class="infocard-contributions">Contributions</h5>
+            </div>
+        </div>
+
+        <div class="infocard slideshow">
+
+        </div>
+
+    </div>
+
 
     <!--Inline for the bottom part of the page-->
 </body>
