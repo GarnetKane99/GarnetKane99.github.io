@@ -31,6 +31,8 @@ h3 {
     padding-top: 1vw;
     padding-bottom: 0vw;
     display: flex;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 1);
     justify-content: space-evenly;
     color: #FFFFFF;
     font-family: geoReg;
