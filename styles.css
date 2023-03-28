@@ -103,7 +103,7 @@ a:hover {
 .selection-container {
     position: absolute;
     display: flex;
-    margin-top: 10.5vw;
+    margin-top: 12vw;
     left: 36.5%;
 }
 
@@ -131,7 +131,8 @@ a:hover {
 
 .card-container {
     display: flex;
-    margin-top: 2vw;
+    flex-wrap: wrap;
+    margin-top: 3vw;
 }
 
 .infocard {
@@ -143,16 +144,17 @@ a:hover {
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 1);
     background-color: #989898;
     color: #FFFFFF;
-    margin-top: 10vw;
+    margin-top: 12vw;
     margin-left: 1vw;
     margin-right: 1vw;
+    margin-bottom: 0;
     text-align: left;
     font-family: geoReg;
-    width: 60vw;
-    height: 15.5vw;
+    width: 63vw;
+    height: 37vh;
     transform-style: preserve-3d;
-    transition: all .2s linear;
-    transition: transform 1s;
+    transition: transform .7s, background-color .2s;
+    box-sizing: border-box;
 }
 
 .front,
@@ -167,12 +169,12 @@ a:hover {
 
 .slideshow {
     border: 0.6vw solid #989898;
-    width: 35vw;
-    height: 15.5vw;
+    width: 31vw;
+    height: 37vh;
 }
 
 .infocard-contributions {
-    font-size: 1.5vw;
+    font-size: 2.25vw;
     text-align: right;
     margin: 0;
 }
@@ -189,5 +191,33 @@ a:hover {
 }
 
 .infocard-game-information {
+    margin: 0;
     font-size: 1.5vw;
+}
+
+.infocard-contributions-information{
+    margin: 0;
+    font-size: 2.25vw;
+}
+
+@media screen and (max-width: 900px) {
+    .infocard,.slideshow {
+        width: 100%;        
+        height:37vh;
+    }
+    .infocard-association{
+        font-size: 4.5vw;
+    }
+    .infocard-game-titles{
+        font-size: 6vw;
+    }
+    .infocard-contributions{
+        font-size: 4.5vw;
+    }
+    .infocard-game-information{
+        font-size: 3vw;
+    }
+    .infocard-contributions-information{
+        font-size: 4.5vw;
+    }
 }
