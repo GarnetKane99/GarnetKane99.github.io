@@ -82,11 +82,11 @@ function InitializeTitles() {
 
     rightarrow.addEventListener("click", function () {
         UpdateCurrentTitle(tempimage);
+        updateTitlesRight();
         temp_image.classList.add("animate-temp-right");
         promo_image.classList.add("animate-origin-right")
         rightarrow.disabled = true;
 
-        updateTitlesRight();
         setTimeout(() => {
             temp_image.classList.remove("animate-temp-right");
             promo_image.classList.remove("animate-origin-right");
@@ -96,11 +96,11 @@ function InitializeTitles() {
 
     leftarrow.addEventListener("click", function () {
         UpdateCurrentTitle(tempimage);
+        updateTitlesLeft();
         temp_image.classList.add("animate-temp-left");
         promo_image.classList.add("animate-origin-left");
         leftarrow.disabled = true;
 
-        updateTitlesLeft();
         setTimeout(() => {
             temp_image.classList.remove("animate-temp-left");
             promo_image.classList.remove("animate-origin-left");
@@ -156,7 +156,7 @@ function UpdateCurrentTitle(imgToUpdate) {
     front_game_title.innerHTML = game_name[activeGame];
     front_game_association.innerHTML = game_association[activeGame];
     front_game_information.innerHTML = game_description[activeGame];
-    
+
     switch (activeGame) {
         case 0:
             imgToUpdate.src = "Promo/ThaumTwoPromo.png";

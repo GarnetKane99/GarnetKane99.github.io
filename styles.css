@@ -95,6 +95,15 @@ body {
     transition: opacity 1s;
 }
 
+@media screen and (max-width: 414px){
+    .banner{
+        font-size: 18px;
+    }
+    .jake-title{
+        font-size: 64px;
+    }
+}
+
 /* arrows and game promos */
 
 .arrow-container {
