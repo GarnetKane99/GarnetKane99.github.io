@@ -1,12 +1,14 @@
 var backActive = false;
 var activeGame = 0;
-const game_name = ["thaum 2 (WIP)", "plants pillar protector I - 2023",
+const game_name = [
+    "thaum 2 (WIP)", "plants pillar protector I - 2023",
     "the game of life - 2022", "bug join - 2022", "pong - 2022",
     "thaum - 2021", "colosseum - 2021", "blockout - 2021",
     "procedural map generator - 2021", "data visualisation handbook - 2021",
     "perseverance - 2021", "band in a winter park - 2020", "coffee rush - 2020",
     "unreal engine 4 wave fighter - 2020", "tetris - 2019"];
-const game_association = ["personal project", "youtube", "personal project", "personal project",
+const game_association = [
+    "personal project", "youtube", "personal project", "personal project",
     "personal project", "university of technology, sydney - capstone 1", "university of technology, sydney - capstone 2",
     "university of technology, sydney - playmakers game jam", "personal project", "university of technology, sydney",
     "university of technology, sydney", "university of technology, sydney", "university of technology, sydney",
@@ -44,85 +46,173 @@ const game_contributions = [
     "ai functionality, local multiplayer setup, procedural content generation, ui/ux/polish",
     "game design, game logic, animation and pixel art, ui/ux, tetris variation"];
 
+var banner;
+var jake_title;
+var gamer_title;
+var circleselection;
+var arrowsandlogo;
+var leftarrow;
+var rightarrow;
+var tempimage;
+var promoimage;
+var front_game_title;
+var front_game_association;
+var front_game_information;
+var cardcontainer
+
 var flipped = false;
 
 function InitializeTitles() {
-    document.getElementById("gametitle").innerHTML = game_name[activeGame];
-    document.getElementById("s1").style.backgroundColor = "#d9d9d9";
-    document.getElementById("association").innerHTML = game_association[activeGame];
-    document.getElementById("description").innerHTML = game_description[activeGame];
-    document.getElementById("gametitleback").innerHTML = game_name[activeGame];
-    document.getElementById("contributions").innerHTML = game_contributions[activeGame];
+    banner = document.getElementById("banner");
+    jake_title = document.getElementById("jaketitle");
+    gamer_title = document.getElementById("gamertitle");
+    circleselection = document.getElementById("selection");
+    arrowsandlogo = document.getElementById("arrowsandlogo");
+    tempimage = document.getElementById("tempimage");
+    promoimage = document.getElementById("promo");
+    leftarrow = document.getElementById("arrowleft");
+    rightarrow = document.getElementById("arrowright");
+    front_game_title = document.getElementById("front-game-title");
+    front_game_association = document.getElementById("front-game-association");
+    front_game_information = document.getElementById("front-game-information");
+    cardcontainer = document.getElementById("card-container");
+    const temp_image = document.getElementById("tempimage");
+    const promo_image = document.getElementById("promo");
+
+
+    rightarrow.addEventListener("click", function () {
+        UpdateCurrentTitle(tempimage);
+        temp_image.classList.add("animate-temp-right");
+        promo_image.classList.add("animate-origin-right")
+        rightarrow.disabled = true;
+
+        updateTitlesRight();
+        setTimeout(() => {
+            temp_image.classList.remove("animate-temp-right");
+            promo_image.classList.remove("animate-origin-right");
+            rightarrow.disabled = false;
+        }, 800);
+    })
+
+    leftarrow.addEventListener("click", function () {
+        UpdateCurrentTitle(tempimage);
+        temp_image.classList.add("animate-temp-left");
+        promo_image.classList.add("animate-origin-left");
+        leftarrow.disabled = true;
+
+        updateTitlesLeft();
+        setTimeout(() => {
+            temp_image.classList.remove("animate-temp-left");
+            promo_image.classList.remove("animate-origin-left");
+            leftarrow.disabled = false;
+        }, 800);
+    })
+
+    front_game_title.innerHTML = game_name[activeGame];
+    front_game_association.innerHTML = game_association[activeGame];
+    front_game_information.innerHTML = game_description[activeGame];
+
+    // document.getElementById("gametitle").innerHTML = game_name[activeGame];
+    // document.getElementById("s1").style.backgroundColor = "#d9d9d9";
+    // document.getElementById("association").innerHTML = game_association[activeGame];
+    // document.getElementById("description").innerHTML = game_description[activeGame];
+    // document.getElementById("gametitleback").innerHTML = game_name[activeGame];
+    // document.getElementById("contributions").innerHTML = game_contributions[activeGame];
+
+    fadeElements();
+}
+
+function fadeElements() {
+    banner.style.opacity = 1;
+
+    setTimeout(() => {
+        jake_title.style.opacity = 1;
+    }, 800);
+
+    setTimeout(() => {
+        gamer_title.style.opacity = 1;
+    }, 1600);
+
+    setTimeout(() => {
+        circleselection.style.opacity = 1;
+        arrowsandlogo.style.opacity = 1;
+        cardcontainer.style.opacity = 1
+    }, 2400);
 }
 
 function updateTitlesLeft() {
     UpdateOldSelection();
     activeGame = activeGame == 0 ? game_name.length - 1 : activeGame - 1;
-    UpdateCurrentTitle();
+    UpdateCurrentTitle(promoimage);
     UpdateNewSelection();
-    flipCard();
+    // flipCard();
 }
 
 
 function updateTitlesRight() {
     UpdateOldSelection();
     activeGame = activeGame == game_name.length - 1 ? 0 : activeGame + 1;
-    UpdateCurrentTitle();
+    UpdateCurrentTitle(promoimage);
     UpdateNewSelection();
-    flipCard();
+
+
+    // flipCard();
 }
 
-function UpdateCurrentTitle() {
-    document.getElementById("gametitle").innerHTML = game_name[activeGame];
-    document.getElementById("association").innerHTML = game_association[activeGame];
-    document.getElementById("description").innerHTML = game_description[activeGame];
-    document.getElementById("gametitleback").innerHTML = game_name[activeGame];
-    document.getElementById("contributions").innerHTML = game_contributions[activeGame];
+function UpdateCurrentTitle(imgToUpdate) {
+    front_game_title.innerHTML = game_name[activeGame];
+    front_game_association.innerHTML = game_association[activeGame];
+    front_game_information.innerHTML = game_description[activeGame];
+    // document.getElementById("gametitle").innerHTML = game_name[activeGame];
+    // document.getElementById("association").innerHTML = game_association[activeGame];
+    // document.getElementById("description").innerHTML = game_description[activeGame];
+    // document.getElementById("gametitleback").innerHTML = game_name[activeGame];
+    // document.getElementById("contributions").innerHTML = game_contributions[activeGame];
     switch (activeGame) {
         case 0:
-            document.getElementById("promo").src = "Promo/ThaumTwoPromo.png";
+            imgToUpdate.src = "Promo/ThaumTwoPromo.png";
             break;
         case 1:
-            document.getElementById("promo").src = "Promo/PPPPromo.png";
+            imgToUpdate.src = "Promo/PPPPromo.png";
             break;
         case 2:
-            document.getElementById("promo").src = "Promo/GOLPromo.png";
+            imgToUpdate.src = "Promo/GOLPromo.png";
             break;
         case 3:
-            document.getElementById("promo").src = "Promo/BugJoinPromo.png";
+            imgToUpdate.src = "Promo/BugJoinPromo.png";
             break;
         case 4:
-            document.getElementById("promo").src = "Promo/PongPromo.png"
+            imgToUpdate.src = "Promo/PongPromo.png"
             break;
         case 5:
-            document.getElementById("promo").src = "Promo/ThaumPromo.png"
+            imgToUpdate.src = "Promo/ThaumPromo.png"
             break;
         case 6:
-            document.getElementById("promo").src = "Promo/ColosseumPromo.png"
+            imgToUpdate.src = "Promo/ColosseumPromo.png"
             break;
         case 7:
-            document.getElementById("promo").src = "Promo/BlockoutPromo.png"
+            imgToUpdate.src = "Promo/BlockoutPromo.png"
             break;
         case 8:
-            document.getElementById("promo").src = "Promo/MapGenPromo.png"
+            imgToUpdate.src = "Promo/MapGenPromo.png"
             break;
         case 9:
-            document.getElementById("promo").src = "Promo/DVHPromo.png"
+            imgToUpdate.src = "Promo/DHVPromo.png"
             break;
         case 10:
-            document.getElementById("promo").src = "Promo/PerseverancePromo.png"
+            imgToUpdate.src = "Promo/PerseverancePromo.png"
             break;
         case 11:
-            document.getElementById("promo").src = "Promo/BIWPPromo.png"
+            imgToUpdate.src = "Promo/BIWPPromo.png"
             break;
         case 12:
-            document.getElementById("promo").src = "Promo/CoffeeRushPromo.png"
+            imgToUpdate.src = "Promo/CoffeeRushPromo.png"
             break;
         case 13:
-            document.getElementById("promo").src = "Promo/WFPromo.png"
+            imgToUpdate.src = "Promo/WFPromo.png"
             break;
         case 14:
-            document.getElementById("promo").src = "Promo/TetrisPromo.png"
+            imgToUpdate.src = "Promo/TetrisPromo.png"
             break;
     }
 }
@@ -152,22 +242,6 @@ function flipCard() {
     backActive = false;
 }
 
-function leftArrowBig() {
-    document.getElementById("arrowleft").style.left = "39vw";
-}
-
-function leftArrowSmall() {
-    document.getElementById("arrowleft").style.left = "40vw";
-}
-
-function rightArrowBig() {
-    document.getElementById("arrowright").style.left = "57.5vw";
-}
-
-function rightArrowSmall() {
-    document.getElementById("arrowright").style.left = "56.5vw";
-}
-
 function flipimg() {
     if (!backActive) {
         document.getElementById("cardflip").style.transform = "rotateY(180deg)";
@@ -190,10 +264,10 @@ function dimBorder() {
 }
 
 function UpdateSelection(num) {
-    flipCard();
+    // flipCard();
     UpdateOldSelection();
     activeGame = num;
-    UpdateCurrentTitle();
+    UpdateCurrentTitle(promoimage);
     UpdateNewSelection();
 }
 

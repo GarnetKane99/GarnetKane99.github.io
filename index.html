@@ -8,65 +8,120 @@
     <title>Jake Meyer Portfolio</title>
 </head>
 
-<body onload="InitializeTitles()">
+<body onload="InitializeTitles()"> <!--onload="InitializeTitles()">-->
     <!--Banner at the top of the web page-->
-    <section class="banner">
-        <div class="banner-linkedin">
-            <a href="https://www.linkedin.com/in/jake-gk-meyer/" target="_blank">linkedin</a>
+    <header>
+        <div class="banner" id="banner">
+            <a href="https://www.linkedin.com/in/jake-gk-meyer/" target="_blank" class="linkedin">
+                <span style="--i:1">l</span>
+                <span style="--i:2">i</span>
+                <span style="--i:3">n</span>
+                <span style="--i:4">k</span>
+                <span style="--i:5">e</span>
+                <span style="--i:6">d</span>
+                <span style="--i:7">i</span>
+                <span style="--i:8">n</span>
+            </a>
+            <a href="https://www.youtube.com/@garnetkane" target="_blank" class="youtube">
+                <span style="--i:1">y</span>
+                <span style="--i:2">o</span>
+                <span style="--i:3">u</span>
+                <span style="--i:4">t</span>
+                <span style="--i:5">u</span>
+                <span style="--i:6">b</span>
+                <span style="--i:7">e</span>
+            </a>
+            <a href="https://www.twitter.com/garnetkane99" target="_blank" class="twitter">
+                <span style="--i:1">t</span>
+                <span style="--i:2">w</span>
+                <span style="--i:3">i</span>
+                <span style="--i:4">t</span>
+                <span style="--i:5">t</span>
+                <span style="--i:6">e</span>
+                <span style="--i:7">r</span>
+            </a>
+            <a href="https://garnetkane.itch.io/" target="_blank" class="itchio">
+                <span style="--i:1">i</span>
+                <span style="--i:2">t</span>
+                <span style="--i:3">c</span>
+                <span style="--i:4">h</span>
+                <span style="--i:5">.</span>
+                <span style="--i:6">i</span>
+                <span style="--i:7">o</span>
+            </a>
+            <a href="">about me</a>
         </div>
-        <a href="https://www.youtube.com/@garnetkane" target="_blank">youtube</a>
-        <a href="https://www.twitter.com/garnetkane99" target="_blank">twitter</a>
-        <a href="https://garnetkane.itch.io/" target="_blank">itch.io</a>
-        <a href="">contact</a>
-    </section>
+    </header>
 
-    <div class="mainbody">
-        <h1 class="jaketitle">jake meyer</h1>
-        <h3 class="gamer">game developer, designer, programmer</h3>
-    </div>
+    <main>
+        <div class="title">
+            <h1 class="jake-title" id="jaketitle">jake meyer</h1>
+            <h3 class="gamer-title" id="gamertitle">game, web, software dev</h3>
+        </div>
 
+        <div class="arrow-container" id="arrowsandlogo">
+            <div class="arrow left" id="arrowleft"></div>
 
-    <div class="arrow-container">
-        <i class="arrow left" onmouseover="leftArrowBig()" onclick="updateTitlesLeft()" onmouseout="leftArrowSmall()"
-            id="arrowleft"></i>
-        <img src="Promo/ThaumTwoPromo.png" alt="Thaum Logo" class="game-logo" id="promo">
-        <i class="arrow right" onmouseover="rightArrowBig()" onclick="updateTitlesRight()"
-            onmouseout="rightArrowSmall()" id="arrowright"></i>
-    </div>
+            <img src="Promo/ThaumTwoPromo.png" class="promo-image" id="promo">
+            <img src="Promo/ThaumTwoPromo.png" class="temp-image" id="tempimage">
 
-    <div class="selection-container">
-        <i class="selection one" id="s1" onclick="UpdateSelection(0)" onmouseover="HoverSelection(0)"
-            onmouseout="UnhoverSelection(0)"></i>
-        <i class="selection two" id="s2" onclick="UpdateSelection(1)" onmouseover="HoverSelection(1)"
-            onmouseout="UnhoverSelection(1)"></i>
-        <i class="selection three" id="s3" onclick="UpdateSelection(2)" onmouseover="HoverSelection(2)"
-            onmouseout="UnhoverSelection(2)"></i>
-        <i class="selection four" id="s4" onclick="UpdateSelection(3)" onmouseover="HoverSelection(3)"
-            onmouseout="UnhoverSelection(3)"></i>
-        <i class="selection five" id="s5" onclick="UpdateSelection(4)" onmouseover="HoverSelection(4)"
-            onmouseout="UnhoverSelection(4)"></i>
-        <i class="selection six" id="s6" onclick="UpdateSelection(5)" onmouseover="HoverSelection(5)"
-            onmouseout="UnhoverSelection(5)"></i>
-        <i class="selection seven" id="s7" onclick="UpdateSelection(6)" onmouseover="HoverSelection(6)"
-            onmouseout="UnhoverSelection(6)"></i>
-        <i class="selection eight" id="s8" onclick="UpdateSelection(7)" onmouseover="HoverSelection(7)"
-            onmouseout="UnhoverSelection(7)"></i>
-        <i class="selection nine" id="s9" onclick="UpdateSelection(8)" onmouseover="HoverSelection(8)"
-            onmouseout="UnhoverSelection(8)"></i>
-        <i class="selection ten" id="s10" onclick="UpdateSelection(9)" onmouseover="HoverSelection(9)"
-            onmouseout="UnhoverSelection(9)"></i>
-        <i class="selection eleven" id="s11" onclick="UpdateSelection(10)" onmouseover="HoverSelection(10)"
-            onmouseout="UnhoverSelection(10)"></i>
-        <i class="selection twelve" id="s12" onclick="UpdateSelection(11)" onmouseover="HoverSelection(11)"
-            onmouseout="UnhoverSelection(11)"></i>
-        <i class="selection thirteen" id="s13" onclick="UpdateSelection(12)" onmouseover="HoverSelection(12)"
-            onmouseout="UnhoverSelection(12)"></i>
-        <i class="selection fourteen" id="s14" onclick="UpdateSelection(13)" onmouseover="HoverSelection(13)"
-            onmouseout="UnhoverSelection(13)"></i>
-        <i class="selection fifteen" id="s15" onclick="UpdateSelection(14)" onmouseover="HoverSelection(14)"
-            onmouseout="UnhoverSelection(14)"></i>
-    </div>
+            <div class="arrow right" id="arrowright"></div>
+        </div>
 
+        <div class="selection-container" id="selection">
+            <div class="selection one" id="s1" onclick="UpdateSelection(0)" onmouseover="HoverSelection(0)"
+                onmouseout="UnhoverSelection(0)"></div>
+            <div class="selection two" id="s2" onclick="UpdateSelection(1)" onmouseover="HoverSelection(1)"
+                onmouseout="UnhoverSelection(1)"></div>
+            <div class="selection three" id="s3" onclick="UpdateSelection(2)" onmouseover="HoverSelection(2)"
+                onmouseout="UnhoverSelection(2)"></div>
+            <div class="selection four" id="s4" onclick="UpdateSelection(3)" onmouseover="HoverSelection(3)"
+                onmouseout="UnhoverSelection(3)"></div>
+            <div class="selection five" id="s5" onclick="UpdateSelection(4)" onmouseover="HoverSelection(4)"
+                onmouseout="UnhoverSelection(4)"></div>
+            <div class="selection six" id="s6" onclick="UpdateSelection(5)" onmouseover="HoverSelection(5)"
+                onmouseout="UnhoverSelection(5)"></div>
+            <div class="selection seven" id="s7" onclick="UpdateSelection(6)" onmouseover="HoverSelection(6)"
+                onmouseout="UnhoverSelection(6)"></div>
+            <div class="selection eight" id="s8" onclick="UpdateSelection(7)" onmouseover="HoverSelection(7)"
+                onmouseout="UnhoverSelection(7)"></div>
+            <div class="selection nine" id="s9" onclick="UpdateSelection(8)" onmouseover="HoverSelection(8)"
+                onmouseout="UnhoverSelection(8)"></div>
+            <div class="selection ten" id="s10" onclick="UpdateSelection(9)" onmouseover="HoverSelection(9)"
+                onmouseout="UnhoverSelection(9)"></div>
+            <div class="selection eleven" id="s11" onclick="UpdateSelection(10)" onmouseover="HoverSelection(10)"
+                onmouseout="UnhoverSelection(10)"></div>
+            <div class="selection twelve" id="s12" onclick="UpdateSelection(11)" onmouseover="HoverSelection(11)"
+                onmouseout="UnhoverSelection(11)"></div>
+            <div class="selection thirteen" id="s13" onclick="UpdateSelection(12)" onmouseover="HoverSelection(12)"
+                onmouseout="UnhoverSelection(12)"></div>
+            <div class="selection fourteen" id="s14" onclick="UpdateSelection(13)" onmouseover="HoverSelection(13)"
+                onmouseout="UnhoverSelection(13)"></div>
+            <div class="selection fifteen" id="s15" onclick="UpdateSelection(14)" onmouseover="HoverSelection(14)"
+                onmouseout="UnhoverSelection(14)"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="card-container" id="card-container">
+            <div class="card game-info">
+                <div class="card front">
+                    <h3 class="card game-titles" id="front-game-title">game title</h3>
+                    <h5 class="card game-association" id="front-game-association">uts, 2021</h5>
+                    <p class="card game-information" id="front-game-information">info about game</p>
+                </div>
+                <div class="card back">
+
+                </div>
+            </div>
+
+            <div class="card slideshow">
+
+            </div>
+        </div>
+    </footer>
+
+<!-- 
     <div class="card-container">
 
         <div class="infocard" id="cardflip" onclick="flipimg()" onmouseover="brightBorder()" onmouseout="dimBorder()">
@@ -86,7 +141,7 @@
             <img src="Promo/BugJoinPromo.png">
         </div>
 
-    </div>
+    </div> -->
 
 
     <!--Inline for the bottom part of the page-->
