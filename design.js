@@ -112,13 +112,6 @@ function InitializeTitles() {
     front_game_association.innerHTML = game_association[activeGame];
     front_game_information.innerHTML = game_description[activeGame];
 
-    // document.getElementById("gametitle").innerHTML = game_name[activeGame];
-    // document.getElementById("s1").style.backgroundColor = "#d9d9d9";
-    // document.getElementById("association").innerHTML = game_association[activeGame];
-    // document.getElementById("description").innerHTML = game_description[activeGame];
-    // document.getElementById("gametitleback").innerHTML = game_name[activeGame];
-    // document.getElementById("contributions").innerHTML = game_contributions[activeGame];
-
     fadeElements();
 }
 
@@ -163,11 +156,7 @@ function UpdateCurrentTitle(imgToUpdate) {
     front_game_title.innerHTML = game_name[activeGame];
     front_game_association.innerHTML = game_association[activeGame];
     front_game_information.innerHTML = game_description[activeGame];
-    // document.getElementById("gametitle").innerHTML = game_name[activeGame];
-    // document.getElementById("association").innerHTML = game_association[activeGame];
-    // document.getElementById("description").innerHTML = game_description[activeGame];
-    // document.getElementById("gametitleback").innerHTML = game_name[activeGame];
-    // document.getElementById("contributions").innerHTML = game_contributions[activeGame];
+    
     switch (activeGame) {
         case 0:
             imgToUpdate.src = "Promo/ThaumTwoPromo.png";
