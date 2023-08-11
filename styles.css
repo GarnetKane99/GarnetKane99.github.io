@@ -95,11 +95,12 @@ body {
     transition: opacity 1s;
 }
 
-@media screen and (max-width: 414px){
-    .banner{
+@media screen and (max-width: 414px) {
+    .banner {
         font-size: 18px;
     }
-    .jake-title{
+
+    .jake-title {
         font-size: 64px;
     }
 }
@@ -350,9 +351,6 @@ body {
 }
 
 .card-container {
-    /* display: flex;
-    flex-wrap: wrap;
-    margin-top: 3vw; */
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
@@ -360,12 +358,11 @@ body {
     transition: opacity 1s;
 }
 
-.game-info{
+.game-info {
     display: inline-block;
     flex: 1 1 70%;
     border: 6px solid #545454;
     border-radius: 15px;
-    padding: 10px;
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 1);
     background-color: #989898;
     color: #FFFFFF;
@@ -378,10 +375,43 @@ body {
     box-sizing: border-box;
 }
 
+.game-info:hover {
+    border-color: #d9d9d9;
+}
+
 .game-titles {
     text-align: left;
     font-size: 48px;
     margin: 0;
+}
+
+.front,
+.back {
+    padding: 10px;
+    backface-visibility: hidden;
+}
+
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    display: inline-block;
+    transform: rotateY(180deg);
+    top: 0;
+    right: 0;
+}
+
+.back-game-titles{
+    font-size: 48px;
+    margin: 0;
+}
+.back-contributions{
+    font-size: 32px;
+    margin: 0;
+}
+.back-description{
+    margin: 0;
+    font-size: 24px;
 }
 
 .game-association {
@@ -394,7 +424,7 @@ body {
     font-size: 24px;
 }
 
-.slideshow{
+.slideshow {
     flex: 1 1 20%;
     height: 200px;
     max-height: 200px;
@@ -407,16 +437,18 @@ body {
 }
 
 @media screen and (max-width:968px) {
-    .card-container{
+    .card-container {
         flex-direction: column;
         align-items: center;
     }
-    .game-info{
+
+    .game-info {
         flex: 1 1 100%;
         margin-right: 0px;
         margin-bottom: 20px;
     }
-    .slideshow{
+
+    .slideshow {
         width: 300px;
         min-height: 200px;
     }

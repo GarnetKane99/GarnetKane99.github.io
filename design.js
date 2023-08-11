@@ -14,23 +14,23 @@ const game_association = [
     "university of technology, sydney", "university of technology, sydney", "university of technology, sydney",
     "university of technology, sydney", "university of technology, sydney"];
 const game_description = [
-    "thaum 2 is a working title. this project is a culmination of what i learnt at university in my degree and is a passion project for myself and the two other guys working on this. we originally made 'thaum' as part of our capstone project while at university, and we always planned on making the game something bigger. as of dec 2022, we started development on this game - which includes all original code, design, gameplay and stories. i am also personally posting regular development videos of this game on my youtube channel, @GarnetKane",
-    "plants pillar protector I is a game i made over the course of 12 hours as part of a challenge for my youtube channel. it is a simple tower defence game, taking inspiration from similar games, but with my own twist. im currently redeveloping this game for an upcoming tutorial/follow along series for my youtube channel",
-    "the game of life takes a spin on john conway's the game of life which explores cell automation. this project was done for fun - i wanted to see if i could do it. once completed, i expanded on it and added my own twist to it to make it more interactive and immersive",
-    "bug join is a hyper-casual match-3 game, similar to candy crush and bejewelled. i created this to explore mobile game development and expand some art and design skills",
-    "a recreation of pong, this game features 1 player mode, 2 player mode and 3 levels of difficulty with a fully custom made AI",
-    "thaum is a classic roguelike made in Unity2D. this was my first of 2 capstone projects at university. play as jop the wizard, stripped of your magic stones, you awaken in a stronghold where the wardens have stolen your powers. now, you must venture through multiple levels and bosses, ultimately to reclaim your powers to escape the stronghold",
-    "colosseum is a multiplayer, arena fighter made in Unity3D. this was the seconds of my 2 capstone projects at university. fight with up to 4 players featuring 3 game modes and 3 game types and be crowned the ultimate gladiator in this multiplayer networked party game",
-    "think 'Tetris' meets 'Hole in the Wall' meets 'Temple Run' - Blockout is what you get when you combine an Endless Runner with puzzles. this game was made over 36 hours as part of the playmakers august game jam",
-    "a 2D Map Generator created using a Random Walker Algorithm. This was created as a solution for 2D roguelike games to generate random and unique maps",
-    "The Data Visualisation Handbook is a children's website inspired interactive book that features 6 different modes created in Java/Processing for the subject Interactive Media",
-    "Perseverance is a visual story that follows the Perseverance and Opportunity Rover on Mars. This was an exploration of Unity's HDRP created for the subject 3D Animation",
-    "Band in a Winter Park is an interactive musical experience set in a wintery park. This project was created for Introduction to Computer Graphics using ThreeJS",
-    "Coffee Rush is a 2D Platformer that follows Player. He just wanted his morning coffee, but Ben the Bean Bandit has stolen all your coffee beans and has lead you onto an exciting chase! This project was created for Introduction to Computer Game Design",
-    "Unreal Engine Wave Fighter is a wave based first person, local networked multiplayer shooter game! Face off against endless waves, upgrade your weapons and survive the hoard! This project was created for Advanced Games Programming",
-    "Play a recreation of Tetris featuring a new game mode that spices up the original game, where every piece has a unique feature!"];
+    "thaum started off as a university capstone project in 2021. the original game is a roguelike, dungeon crawler, inspired by hades, binding of isaac and dead cells. nearly 2 years from completing that game, 3 of the 5 original developers from that team came together and we collectively decided to remake this as a passion project, in hopes of releasing it on steam as an original game. we are in the process of designing the game, from original code, original assets and original ideas. in extension, development on this game is being regularly updated on my personal youtube channel, @GarnetKane",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""]
 const game_contributions = [
-    "project manager, lead developer, game design, pixel art, artificial intelligence, tools, procedural generation, weapons systems",
+    "project manager, lead developer, game design, pixel art, artificial intelligence, tools, procedural generation, weapons systems, media management/promotion <br><br> unity2d | c# (c sharp) | aseprite | github | youtube",
     "game design, pixel art, lead developer, procedural map generation, economy system, ui",
     "game design, ui, pixel art, lead developer",
     "game design, level generation, pixel art, ui, tool system, leveling system",
@@ -59,6 +59,8 @@ var front_game_title;
 var front_game_association;
 var front_game_information;
 var cardcontainer
+var back_game_title;
+var back_game_contributions;
 
 var flipped = false;
 
@@ -76,9 +78,10 @@ function InitializeTitles() {
     front_game_association = document.getElementById("front-game-association");
     front_game_information = document.getElementById("front-game-information");
     cardcontainer = document.getElementById("card-container");
+    back_game_title = document.getElementById("back-game-title");
+    back_game_contributions = document.getElementById("back-description");
     const temp_image = document.getElementById("tempimage");
     const promo_image = document.getElementById("promo");
-
 
     rightarrow.addEventListener("click", function () {
         UpdateCurrentTitle(tempimage);
@@ -108,9 +111,8 @@ function InitializeTitles() {
         }, 800);
     })
 
-    front_game_title.innerHTML = game_name[activeGame];
-    front_game_association.innerHTML = game_association[activeGame];
-    front_game_information.innerHTML = game_description[activeGame];
+    UpdateCurrentTitle(promoimage);
+    UpdateNewSelection();
 
     fadeElements();
 }
@@ -156,6 +158,8 @@ function UpdateCurrentTitle(imgToUpdate) {
     front_game_title.innerHTML = game_name[activeGame];
     front_game_association.innerHTML = game_association[activeGame];
     front_game_information.innerHTML = game_description[activeGame];
+    back_game_title.innerHTML = game_name[activeGame];
+    back_game_contributions.innerHTML = game_contributions[activeGame];
 
     switch (activeGame) {
         case 0:
@@ -216,22 +220,22 @@ function UpdateNewSelection() {
     document.getElementById(newSelection).style.backgroundColor = "#d9d9d9";
 }
 
+// function flip() {
+//     // if (backActive) {
+//     //     document.getElementById("cardflip").style.transform = "rotateY(0deg)";
+//     // }
+
+//     if (!flipped) {
+//         document.getElementById("cardflip").style.transform = "rotateX(360deg)"
+//         flipped = true;
+//     } else {
+//         document.getElementById("cardflip").style.transform = "rotateX(0deg)"
+//         flipped = false;
+//     }
+//     backActive = false;
+// }
+
 function flipCard() {
-    if (backActive) {
-        document.getElementById("cardflip").style.transform = "rotateY(0deg)";
-    }
-
-    if (!flipped) {
-        document.getElementById("cardflip").style.transform = "rotateX(360deg)"
-        flipped = true;
-    } else {
-        document.getElementById("cardflip").style.transform = "rotateX(0deg)"
-        flipped = false;
-    }
-    backActive = false;
-}
-
-function flipimg() {
     if (!backActive) {
         document.getElementById("cardflip").style.transform = "rotateY(180deg)";
         backActive = true;
