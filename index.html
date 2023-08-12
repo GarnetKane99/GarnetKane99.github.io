@@ -9,119 +9,43 @@
     <title>Jake Meyer Portfolio</title>
 </head>
 
-<body onload="InitializeTitles()"> <!--onload="InitializeTitles()">-->
+<body> <!--onload="InitializeTitles()">-->
     <!--Banner at the top of the web page-->
     <header>
-        <div class="banner" id="banner">
-            <a href="https://www.linkedin.com/in/jake-gk-meyer/" target="_blank" class="linkedin">
-                <span style="--i:1">l</span>
-                <span style="--i:2">i</span>
-                <span style="--i:3">n</span>
-                <span style="--i:4">k</span>
-                <span style="--i:5">e</span>
-                <span style="--i:6">d</span>
-                <span style="--i:7">i</span>
-                <span style="--i:8">n</span>
+        <div class="banner">
+            <a href>
+                <span>About</span>
             </a>
-            <a href="https://www.youtube.com/@garnetkane" target="_blank" class="youtube">
-                <span style="--i:1">y</span>
-                <span style="--i:2">o</span>
-                <span style="--i:3">u</span>
-                <span style="--i:4">t</span>
-                <span style="--i:5">u</span>
-                <span style="--i:6">b</span>
-                <span style="--i:7">e</span>
+            <span>|</span>
+            <a href>
+                <span>Projects</span>
             </a>
-            <a href="https://www.twitter.com/garnetkane99" target="_blank" class="twitter">
-                <span style="--i:1">t</span>
-                <span style="--i:2">w</span>
-                <span style="--i:3">i</span>
-                <span style="--i:4">t</span>
-                <span style="--i:5">t</span>
-                <span style="--i:6">e</span>
-                <span style="--i:7">r</span>
+            <span>|</span>
+            <a href>
+                <span>YouTube</span>
             </a>
-            <a href="https://garnetkane.itch.io/" target="_blank" class="itchio">
-                <span style="--i:1">i</span>
-                <span style="--i:2">t</span>
-                <span style="--i:3">c</span>
-                <span style="--i:4">h</span>
-                <span style="--i:5">.</span>
-                <span style="--i:6">i</span>
-                <span style="--i:7">o</span>
+            <span>|</span>
+            <a href>
+                <span>LinkedIn</span>
             </a>
-            <a href="">about me</a>
+            <span>|</span>
+            <a href>
+                <span>Itch.io</span>
+            </a>
         </div>
     </header>
 
     <main>
-        <div class="title">
-            <h1 class="jake-title" id="jaketitle">jake meyer</h1>
-            <h3 class="gamer-title" id="gamertitle">game, web, software dev</h3>
+        <div class = "title">
+            <h1 class = "jake">JAKE MEYER</h1>
         </div>
-
-        <div class="arrow-container" id="arrowsandlogo">
-            <div class="arrow left" id="arrowleft"></div>
-
-            <img src="Promo/ThaumTwoPromo.png" class="promo-image" id="promo">
-            <img src="Promo/ThaumTwoPromo.png" class="temp-image" id="tempimage">
-
-            <div class="arrow right" id="arrowright"></div>
-        </div>
-
-        <div class="selection-container" id="selection">
-            <div class="selection one" id="s1" onclick="UpdateSelection(0)" onmouseover="HoverSelection(0)"
-                onmouseout="UnhoverSelection(0)"></div>
-            <div class="selection two" id="s2" onclick="UpdateSelection(1)" onmouseover="HoverSelection(1)"
-                onmouseout="UnhoverSelection(1)"></div>
-            <div class="selection three" id="s3" onclick="UpdateSelection(2)" onmouseover="HoverSelection(2)"
-                onmouseout="UnhoverSelection(2)"></div>
-            <div class="selection four" id="s4" onclick="UpdateSelection(3)" onmouseover="HoverSelection(3)"
-                onmouseout="UnhoverSelection(3)"></div>
-            <div class="selection five" id="s5" onclick="UpdateSelection(4)" onmouseover="HoverSelection(4)"
-                onmouseout="UnhoverSelection(4)"></div>
-            <div class="selection six" id="s6" onclick="UpdateSelection(5)" onmouseover="HoverSelection(5)"
-                onmouseout="UnhoverSelection(5)"></div>
-            <div class="selection seven" id="s7" onclick="UpdateSelection(6)" onmouseover="HoverSelection(6)"
-                onmouseout="UnhoverSelection(6)"></div>
-            <div class="selection eight" id="s8" onclick="UpdateSelection(7)" onmouseover="HoverSelection(7)"
-                onmouseout="UnhoverSelection(7)"></div>
-            <div class="selection nine" id="s9" onclick="UpdateSelection(8)" onmouseover="HoverSelection(8)"
-                onmouseout="UnhoverSelection(8)"></div>
-            <div class="selection ten" id="s10" onclick="UpdateSelection(9)" onmouseover="HoverSelection(9)"
-                onmouseout="UnhoverSelection(9)"></div>
-            <div class="selection eleven" id="s11" onclick="UpdateSelection(10)" onmouseover="HoverSelection(10)"
-                onmouseout="UnhoverSelection(10)"></div>
-            <div class="selection twelve" id="s12" onclick="UpdateSelection(11)" onmouseover="HoverSelection(11)"
-                onmouseout="UnhoverSelection(11)"></div>
-            <div class="selection thirteen" id="s13" onclick="UpdateSelection(12)" onmouseover="HoverSelection(12)"
-                onmouseout="UnhoverSelection(12)"></div>
-            <div class="selection fourteen" id="s14" onclick="UpdateSelection(13)" onmouseover="HoverSelection(13)"
-                onmouseout="UnhoverSelection(13)"></div>
-            <div class="selection fifteen" id="s15" onclick="UpdateSelection(14)" onmouseover="HoverSelection(14)"
-                onmouseout="UnhoverSelection(14)"></div>
+        <div class = "headshot">
+            <img src = "Headshot/JakeDrawing.png">
         </div>
     </main>
 
     <footer>
-        <div class="card-container" id="card-container">
-            <div class="card game-info" onclick="flipCard()" id="cardflip">
-                <div class="card front">
-                    <h3 class="card game-titles" id="front-game-title">game title</h3>
-                    <h5 class="card game-association" id="front-game-association">uts, 2021</h5>
-                    <p class="card game-information" id="front-game-information">info about game</p>
-                </div>
-                <div class="card back">
-                    <h3 class="card back-game-titles" id="back-game-title">game title</h3>
-                    <h5 class="card back-contributions" id="back-contributions">contributions</h5>
-                    <p class="card back-description" id="back-description"></p>
-                </div>
-            </div>
 
-            <div class="card slideshow">
-
-            </div>
-        </div>
     </footer>
 </body>
 
